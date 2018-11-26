@@ -1,5 +1,7 @@
 package ictgradschool.industry.exceptions.exceptionallybad;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class StringEntry {
@@ -9,8 +11,25 @@ public class StringEntry {
     }
 
     private void start(){
-        getUserInput();
+        String characterstuff=getUserInput();
+        List wordList = getWords(characterstuff);
+        System.out.println(wordList);
 
+    }
+
+    private List getWords(String uInput) {
+        int nextSpaceNum;
+        String word;
+        int count=0;
+        List wordList = new ArrayList();
+        while(uInput.length()>0){
+            nextSpaceNum = uInput.indexOf(" ");
+            word = uInput.substring(0,nextSpaceNum);
+            wordList.add(count,word);
+            uInput=uInput.substring(nextSpaceNum);
+            count++;
+        }
+        return wordList;
     }
 
     private String getUserInput() {
