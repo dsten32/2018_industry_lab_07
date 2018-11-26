@@ -24,6 +24,8 @@ public class StringEntry {
 
         getWords(userString);
 
+        areValidWords();
+
 
     }
 
@@ -44,7 +46,7 @@ public class StringEntry {
         }
     }
 
-    private void getWords(String userInput) {
+    private String[] getWords(String userInput) {
         String workingString=userInput.trim();
         int count =0;
         int nextSpacePos=1;
@@ -66,6 +68,11 @@ public class StringEntry {
         }
 //        testing out printing the array just to confirm the contents.
 //        System.out.println(Arrays.toString(words));
+        return words;
+    }
+
+    private boolean areValidWords(String[] words){
+        return false;
     }
 
     public static void main(String[] args) {
