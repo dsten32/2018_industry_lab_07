@@ -57,10 +57,13 @@ public class ArraysAndExceptions {
      * Creates and returns an array with five random numbers.
      */
     private int[] generateArray() {
-
+        int[] nArray= new int[5];
+        for (int i = 0; i < nArray.length; i++) {
+            nArray[i]=(int)(Math.random()*100000);
+        }
         // TODO Create an array of length five, and fill it with random integers
         // TODO (say, between 1 - 1000, but doesn't really matter).
-        return null;
+        return nArray;
     }
 
     public static void main(String[] args) {
