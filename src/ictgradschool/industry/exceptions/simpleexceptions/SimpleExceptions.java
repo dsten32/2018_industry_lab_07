@@ -8,13 +8,13 @@ public class SimpleExceptions {
         SimpleExceptions exceptions = new SimpleExceptions();
 
         //Question 1 & 2
-        exceptions.handlingException();
+//        exceptions.handlingException();
 
         //Question3
-        //exceptions.Question3();
+//        exceptions.Question3();
 
         //Question4
-        //exceptions.Question4();
+        exceptions.Question4();
     }
 
     /**
@@ -60,9 +60,19 @@ public class SimpleExceptions {
 
     public void Question3() {
         //Write some Java code which throws a StringIndexOutOfBoundsException
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter anything: ");
+        String input = sc.next();
+        System.out.println(input.charAt(input.length()+1));
     }
 
     public void Question4() {
         //Write some Java code which throws a ArrayIndexOutOfBoundsException
+        String[] sArray = new String[2];
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter anything else: ");
+        sArray[0] = sc.next();
+
+        System.out.println(sArray[2]);
     }
 }
