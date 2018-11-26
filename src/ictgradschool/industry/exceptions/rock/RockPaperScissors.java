@@ -117,10 +117,10 @@ public class RockPaperScissors {
                     if(g>=1 && g<=4){
                         return g;
                     } else {
-                        System.out.println("please enter number within the range 1-4");
+                        System.out.println("Invalid input enter number within the range 1-4, protoplasmic moron");
                     }
                 } catch (NumberFormatException e) {
-                    System.out.println("invalid");
+                    System.out.println("Invalid input enter a number, meatbag");
                 }
             }
         }
