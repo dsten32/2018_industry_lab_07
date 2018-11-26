@@ -21,6 +21,11 @@ public class GuessingGame {
 
             guess = getUserGuess();
 
+            while (guess<1 || guess>100){
+                System.out.println("Invalid number, please chose between 1-100.");
+                guess = getUserGuess();
+            }
+
             if (guess > number) {
                 System.out.println("Too high!");
             }
@@ -52,7 +57,14 @@ public class GuessingGame {
      */
     private int getUserGuess() {
         System.out.print("Enter your guess: ");
-        return Integer.parseInt(Keyboard.readInput());
+int guess=-1;
+        try {
+            guess=Integer.parseInt(Keyboard.readInput());
+        } catch (NumberFormatException e){
+            System.out.println("That was not a number, please try again.");
+        }
+
+        return guess;
     }
 
     /**
