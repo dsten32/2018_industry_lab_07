@@ -26,6 +26,7 @@ public class RockPaperScissors {
             boolean roundComplete = false;
             while (!roundComplete) {
 
+
                 int playerChoice = getPlayerChoice(playerName);
                 int computerChoice = getComputerChoice();
 
@@ -98,8 +99,42 @@ public class RockPaperScissors {
      * @return an int corresponding to the player's choice.
      */
     private int getPlayerChoice(String playerName) {
-        printMenu(playerName);
-        return Integer.parseInt(Keyboard.readInput());
+
+        while (true) {
+            printMenu(playerName);
+            String guess = Keyboard.readInput();
+            if (guess.equalsIgnoreCase("rock")) {
+                return 1;
+            } else if (guess.equalsIgnoreCase("paper")) {
+                return 2;
+            } else if (guess.equalsIgnoreCase("scissors")) {
+                return 3;
+            } else if (guess.equalsIgnoreCase("quit")) {
+                return 4;
+            } else {
+                try {
+                    int g=Integer.parseInt(guess);
+                    if(g>=1 && g<=4){
+                        return g;
+                    } else {
+                        System.out.println("please enter number within the range 1-4");
+                    }
+                } catch (NumberFormatException e) {
+                    System.out.println("invalid");
+                }
+            }
+        }
+
+//        return Integer.parseInt(guess);
+
+    }
+
+    private String getPlayerString(){
+        String playerString="";
+        while (!playerString.equalsIgnoreCase("rock") || !playerString.equalsIgnoreCase("paper") || !playerString.equalsIgnoreCase("scissors") ||!playerString.equalsIgnoreCase("quit")){
+            System.out.println("That is an incorrect word, try again:");
+        }
+        return playerString;
     }
 
     /**
