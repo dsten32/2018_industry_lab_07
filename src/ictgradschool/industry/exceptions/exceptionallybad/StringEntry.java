@@ -22,9 +22,14 @@ public class StringEntry {
             }
         }
 
-        getWords(userString);
+        String[] words=getWords(userString);
 
-        areValidWords();
+        try{
+            areValidWords(words);
+            getInitials(words);
+        }catch (InvalidWordException e){
+            System.out.print("Error: "+e);
+        }
 
 
     }
@@ -36,7 +41,7 @@ public class StringEntry {
         Scanner sc = new Scanner(System.in);
         System.out.print("Enter something: ");
         uInput = sc.nextLine();
-        System.out.println("you entered: "+uInput);
+
         return uInput;
     }
 
@@ -74,13 +79,20 @@ public class StringEntry {
     private boolean areValidWords(String[] words) throws InvalidWordException {
         for (int i = 0; i <words.length ; i++) {
             for (int j = 0; j <words[i].length() ; j++) {
-                if (Character.digit(words[i].charAt(j),10)<0){
+                if (Character.digit(words[i].charAt(j),10)>0){
                     throw new InvalidWordException("cannot have integers in words");
-                } else {
-                    return true;
                 }
-            }        }
-        return false;
+            }
+        }
+        return true;
+    }
+
+    private void getInitials(String[] words){
+        String output="";
+        for (int i = 0; i <words.length ; i++) {
+            output+=words[i].charAt(0) + " ";
+        }
+        System.out.print("You Entered: "+output);
     }
 
     public static void main(String[] args) {
