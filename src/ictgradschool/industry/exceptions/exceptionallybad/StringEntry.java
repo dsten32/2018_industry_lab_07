@@ -71,7 +71,15 @@ public class StringEntry {
         return words;
     }
 
-    private boolean areValidWords(String[] words){
+    private boolean areValidWords(String[] words) throws InvalidWordException {
+        for (int i = 0; i <words.length ; i++) {
+            for (int j = 0; j <words[i].length() ; j++) {
+                if (Character.digit(words[i].charAt(j),10)<0){
+                    throw new InvalidWordException("cannot have integers in words");
+                } else {
+                    return true;
+                }
+            }        }
         return false;
     }
 
