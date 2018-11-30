@@ -52,12 +52,12 @@ public class GuessingGame {
     /**
      * Gets the user's guess from the keyboard. Currently assumes that the user will always enter a valid guess.
      *
-     * TODO Implement some error handling, for the cases where the user enters a value that's too big, too small, or
-     * TODO not an integer. Change this method so it's guaranteed to return an integer between 1 & 100, inclusive.
+     * TODOne Implement some error handling, for the cases where the user enters a value that's too big, too small, or
+     * TODOne not an integer. Change this method so it's guaranteed to return an integer between 1 & 100, inclusive.
      */
     private int getUserGuess() {
         System.out.print("Enter your guess: ");
-int guess=-1;
+        int guess=-1;
         try {
             guess=Integer.parseInt(Keyboard.readInput());
         } catch (NumberFormatException e){

@@ -1,7 +1,5 @@
 package ictgradschool.industry.exceptions.exceptionallybad;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class StringEntry {
@@ -76,7 +74,7 @@ public class StringEntry {
         return words;
     }
 
-    private boolean areValidWords(String[] words) throws InvalidWordException {
+    private void areValidWords(String[] words) throws InvalidWordException {
         for (int i = 0; i <words.length ; i++) {
             for (int j = 0; j <words[i].length() ; j++) {
                 if (Character.digit(words[i].charAt(j),10)>0){
@@ -84,7 +82,7 @@ public class StringEntry {
                 }
             }
         }
-        return true;
+        return;
     }
 
     private void getInitials(String[] words){
